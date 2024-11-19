@@ -31,7 +31,11 @@ class PromptViewController: UIViewController {
     }
 
     @IBAction func clickedAdd(_ sender: UIButton) {
+        self.hidesBottomBarWhenPushed = true
+        self.pushViewController(PromptFormViewController.self)
+        self.hidesBottomBarWhenPushed = false
     }
+    
     @IBAction func chooseCategory(_ sender: CategoryButton) {
     }
 }

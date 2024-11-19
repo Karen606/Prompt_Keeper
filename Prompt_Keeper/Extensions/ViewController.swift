@@ -9,13 +9,14 @@ import UIKit
 
 extension UIViewController {
     
-//    func setNaviagtionBackButton(image: UIImage = .back) {
-//        let backButton = UIButton(type: .custom)
-//        backButton.setImage(image, for: .normal)
-//        backButton.imageView?.contentMode = .scaleAspectFit
-//        backButton.addTarget(self, action: #selector(clickedBack), for: .touchUpInside)
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
-//    }
+    func setNaviagtionBackButton() {
+        let backButton = UIButton(type: .custom)
+        backButton.setTitle("Cancel", for: .normal)
+        backButton.titleLabel?.font = .regular(size: 16)
+        backButton.setTitleColor(.baseRed, for: .normal)
+        backButton.addTarget(self, action: #selector(clickedBack), for: .touchUpInside)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+    }
     
     @objc func clickedBack() {
         navigationController?.popViewController(animated: true)
