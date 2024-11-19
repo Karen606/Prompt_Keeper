@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PromptViewController" customModule="Prompt_Keeper" customModuleProvider="target">
+            <connections>
+                <outlet property="addPromptButton" destination="Uln-S3-fGQ" id="ZVT-gW-8fx"/>
+                <outlet property="categoryLabel" destination="cUa-Vf-Auj" id="jEn-F7-qrF"/>
+                <outlet property="promptyLabel" destination="7o7-NC-v2j" id="Td6-yU-v7p"/>
+                <outlet property="promptyTableView" destination="XaN-aD-IrW" id="YQ3-Pa-hdK"/>
+                <outlet property="searchTextField" destination="yr8-49-FxS" id="Bhe-Wv-nfi"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="categoryButtons" destination="LxW-Sm-hT4" collectionClass="NSMutableArray" id="GEm-ac-wbJ"/>
+                <outletCollection property="categoryButtons" destination="4Nr-Oz-iWK" collectionClass="NSMutableArray" id="JZ6-FV-pn3"/>
+                <outletCollection property="categoryButtons" destination="p1B-9U-B8l" collectionClass="NSMutableArray" id="yhI-w4-1cZ"/>
+                <outletCollection property="categoryButtons" destination="mPU-BG-A2w" collectionClass="NSMutableArray" id="AnA-is-8no"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yr8-49-FxS">
+                    <rect key="frame" x="16" y="91" width="357" height="39"/>
+                    <color key="backgroundColor" name="searchColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="39" id="Znk-PX-5XO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUa-Vf-Auj">
+                    <rect key="frame" x="48.000000000000007" y="158" width="82.666666666666686" height="20"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Pgd-h5-1ed">
+                    <rect key="frame" x="16" y="186" width="357" height="42"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LxW-Sm-hT4" customClass="CategoryButton" customModule="Prompt_Keeper" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="42"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="2z7-jX-cP6"/>
+                                <constraint firstAttribute="height" constant="42" id="6du-eV-F92"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="All">
+                                <color key="titleColor" name="baseBlack"/>
+                            </state>
+                            <connections>
+                                <action selector="chooseCategory:" destination="-1" eventType="touchUpInside" id="6sB-sE-f6X"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Nr-Oz-iWK" customClass="CategoryButton" customModule="Prompt_Keeper" customModuleProvider="target">
+                            <rect key="frame" x="75" y="0.0" width="62" height="42"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="62" id="D7P-VT-eTB"/>
+                                <constraint firstAttribute="height" constant="42" id="S8h-6k-u9E"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Work">
+                                <color key="titleColor" name="baseBlack"/>
+                            </state>
+                            <connections>
+                                <action selector="chooseCategory:" destination="-1" eventType="touchUpInside" id="7jl-Zp-sUu"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1B-9U-B8l" customClass="CategoryButton" customModule="Prompt_Keeper" customModuleProvider="target">
+                            <rect key="frame" x="162" y="0.0" width="90" height="42"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="iTT-ph-t1z"/>
+                                <constraint firstAttribute="width" constant="90" id="u6S-eb-uWx"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Personal">
+                                <color key="titleColor" name="baseBlack"/>
+                            </state>
+                            <connections>
+                                <action selector="chooseCategory:" destination="-1" eventType="touchUpInside" id="unT-Oy-tAf"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPU-BG-A2w" customClass="CategoryButton" customModule="Prompt_Keeper" customModuleProvider="target">
+                            <rect key="frame" x="277" y="0.0" width="80" height="42"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="lAy-qY-h2Z"/>
+                                <constraint firstAttribute="width" constant="80" id="ph5-q1-bas"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Studies">
+                                <color key="titleColor" name="baseBlack"/>
+                            </state>
+                            <connections>
+                                <action selector="chooseCategory:" destination="-1" eventType="touchUpInside" id="r3Y-g0-lgB"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uln-S3-fGQ">
+                    <rect key="frame" x="39" y="256" width="323" height="50"/>
+                    <color key="backgroundColor" name="buttonColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="ztl-M5-YVw"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Add prompt"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="clickedAdd:" destination="-1" eventType="touchUpInside" id="SKL-YT-f7t"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Promty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7o7-NC-v2j">
+                    <rect key="frame" x="169.33333333333334" y="334" width="54.666666666666657" height="20"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XaN-aD-IrW">
+                    <rect key="frame" x="0.0" y="374" width="393" height="444"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XaN-aD-IrW" secondAttribute="trailing" id="9FO-Jn-mYW"/>
+                <constraint firstItem="Pgd-h5-1ed" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="AtG-Ja-z9z"/>
+                <constraint firstItem="Pgd-h5-1ed" firstAttribute="top" secondItem="cUa-Vf-Auj" secondAttribute="bottom" constant="8" symbolic="YES" id="Eny-2e-0P4"/>
+                <constraint firstItem="7o7-NC-v2j" firstAttribute="top" secondItem="Uln-S3-fGQ" secondAttribute="bottom" constant="28" id="GGj-W6-l7A"/>
+                <constraint firstItem="Uln-S3-fGQ" firstAttribute="top" secondItem="Pgd-h5-1ed" secondAttribute="bottom" constant="28" id="HMK-kI-wyN"/>
+                <constraint firstItem="yr8-49-FxS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Hvj-iX-g7u"/>
+                <constraint firstItem="Uln-S3-fGQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="39" id="KYV-9q-GzE"/>
+                <constraint firstItem="7o7-NC-v2j" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="L4o-F7-lh9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Uln-S3-fGQ" secondAttribute="trailing" constant="31" id="MED-tb-HtN">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="XaN-aD-IrW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MfK-yJ-7Rd"/>
+                <constraint firstItem="yr8-49-FxS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="WRm-ad-L0y"/>
+                <constraint firstItem="cUa-Vf-Auj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="WSo-t5-ssk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yr8-49-FxS" secondAttribute="trailing" constant="20" id="ZA3-qB-xBE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="XaN-aD-IrW" secondAttribute="bottom" id="aEV-nB-uzf"/>
+                <constraint firstItem="XaN-aD-IrW" firstAttribute="top" secondItem="7o7-NC-v2j" secondAttribute="bottom" constant="20" id="h3d-3Q-ccv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Pgd-h5-1ed" secondAttribute="trailing" constant="20" id="iCx-Nj-EGz"/>
+                <constraint firstItem="cUa-Vf-Auj" firstAttribute="top" secondItem="yr8-49-FxS" secondAttribute="bottom" constant="28" id="u1M-7y-E2i"/>
+            </constraints>
+            <point key="canvasLocation" x="136.64122137404578" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="baseBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="buttonColor">
+            <color red="0.011764705882352941" green="0.2196078431372549" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="searchColor">
+            <color red="0.96862745098039216" green="0.97254901960784312" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
