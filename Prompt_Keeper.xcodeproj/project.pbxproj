@@ -49,6 +49,7 @@
 		6B1B19A22CED624700E7328A /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B1B19A12CED624700E7328A /* MyCell.xib */; };
 		6B1B19A32CED624700E7328A /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B19A02CED624700E7328A /* MyCell.swift */; };
 		6B1B19A62CED70DA00E7328A /* FavoritePromtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B19A52CED70DA00E7328A /* FavoritePromtViewModel.swift */; };
+		6B1B19A92CED89AC00E7328A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B19A82CED89AC00E7328A /* HomeViewModel.swift */; };
 		9475A90F26B8265D8C370AE7 /* Pods_Prompt_Keeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EEDF9471ECCB4ED458C2604 /* Pods_Prompt_Keeper.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		6B1B19A02CED624700E7328A /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		6B1B19A12CED624700E7328A /* MyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
 		6B1B19A52CED70DA00E7328A /* FavoritePromtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePromtViewModel.swift; sourceTree = "<group>"; };
+		6B1B19A82CED89AC00E7328A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B77F8BF42585515DFAC2CE81 /* Pods-Prompt_Keeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prompt_Keeper.debug.xcconfig"; path = "Target Support Files/Pods-Prompt_Keeper/Pods-Prompt_Keeper.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -213,6 +215,7 @@
 		6B1B19652CECB23200E7328A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				6B1B19A72CED899F00E7328A /* ViewModel */,
 				6B1B19662CECB23600E7328A /* View */,
 			);
 			path = Home;
@@ -347,6 +350,14 @@
 			isa = PBXGroup;
 			children = (
 				6B1B19A52CED70DA00E7328A /* FavoritePromtViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6B1B19A72CED899F00E7328A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6B1B19A82CED89AC00E7328A /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -501,6 +512,7 @@
 				6B1B197B2CECB2B600E7328A /* SettingsViewController.swift in Sources */,
 				6B1B195F2CECAC2100E7328A /* BaseButton.swift in Sources */,
 				6B1B19872CED236700E7328A /* PaddingTextField.swift in Sources */,
+				6B1B19A92CED89AC00E7328A /* HomeViewModel.swift in Sources */,
 				6B1B193C2CECA9A900E7328A /* Prompt_Keeper.xcdatamodeld in Sources */,
 				6B1B19852CED1DDE00E7328A /* PromptFormViewController.swift in Sources */,
 				6B1B19A62CED70DA00E7328A /* FavoritePromtViewModel.swift in Sources */,
@@ -545,8 +557,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Root;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -554,9 +567,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Karen.Prompt-Keeper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -574,8 +589,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Root;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -583,9 +599,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Karen.Prompt-Keeper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

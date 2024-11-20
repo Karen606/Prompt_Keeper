@@ -9,6 +9,7 @@ target 'Prompt_Keeper' do
   pod 'FirebaseAnalytics'
   pod 'Firebase/RemoteConfig'
   pod 'DropDown'
+  pod 'TTSwitch', '~> 0.0.5'
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|

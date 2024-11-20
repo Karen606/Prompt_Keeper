@@ -34,11 +34,11 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         appearance.backgroundColor = .button
         let normalAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.bold(size: 14) ?? .systemFont(ofSize: 14),
-            .foregroundColor: UIColor.white
+            .foregroundColor: UIColor.background
         ]
         let selectedAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.bold(size: 14) ?? .systemFont(ofSize: 14),
-            .foregroundColor: UIColor.white
+            .foregroundColor: UIColor.background
         ]
         appearance.stackedLayoutAppearance.normal.titleTextAttributes = normalAttributes
         appearance.stackedLayoutAppearance.selected.titleTextAttributes = selectedAttributes

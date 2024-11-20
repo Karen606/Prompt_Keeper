@@ -1,22 +1,136 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="Prompt_Keeper" customModuleProvider="target">
             <connections>
+                <outlet property="interfaceModeSwitch" destination="SmX-K7-q9O" id="DpJ-fW-od7"/>
+                <outlet property="modeLabel" destination="owg-Yh-yij" id="2aq-MF-gdb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="settingsButton" destination="dyL-li-Isj" collectionClass="NSMutableArray" id="I75-rb-fpb"/>
+                <outletCollection property="settingsButton" destination="5LD-Qo-LGT" collectionClass="NSMutableArray" id="vqv-tN-eSp"/>
+                <outletCollection property="settingsButton" destination="EQd-BA-qd5" collectionClass="NSMutableArray" id="KWL-y5-3mt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SmX-K7-q9O" customClass="TTSwitch">
+                    <rect key="frame" x="130.66666666666666" y="131.33333333333334" width="131.99999999999997" height="60"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="132" id="P4e-bK-UV4"/>
+                        <constraint firstAttribute="height" constant="60" id="lc4-8x-2Gk"/>
+                    </constraints>
+                    <connections>
+                        <action selector="chooseInterfaceMode:" destination="-1" eventType="valueChanged" id="YsW-vQ-DgI"/>
+                    </connections>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="8NG-5c-WGh">
+                    <rect key="frame" x="35" y="327.66666666666669" width="323" height="222.00000000000006"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyL-li-Isj">
+                            <rect key="frame" x="0.0" y="0.0" width="323" height="50"/>
+                            <color key="backgroundColor" name="buttonColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="BgB-Dt-9mp"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Contact Us">
+                                <color key="titleColor" name="background"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="clickedContactUs:" destination="-1" eventType="touchUpInside" id="3oF-ir-lTH"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5LD-Qo-LGT">
+                            <rect key="frame" x="0.0" y="86" width="323" height="50"/>
+                            <color key="backgroundColor" name="buttonColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="lNp-w1-YDl"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Privacy Policy">
+                                <color key="titleColor" name="background"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="clickedPrivacyPolicy:" destination="-1" eventType="touchUpInside" id="vyo-2R-qeS"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQd-BA-qd5">
+                            <rect key="frame" x="0.0" y="172" width="323" height="50"/>
+                            <color key="backgroundColor" name="buttonColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="W45-N3-dqp"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Rate Us">
+                                <color key="titleColor" name="background"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="clickedRateUs:" destination="-1" eventType="touchUpInside" id="UIA-M6-GXX"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Light Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owg-Yh-yij">
+                    <rect key="frame" x="153.66666666666666" y="103" width="86" height="20.333333333333329"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="baseBlack"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="background"/>
+            <constraints>
+                <constraint firstItem="owg-Yh-yij" firstAttribute="centerX" secondItem="SmX-K7-q9O" secondAttribute="centerX" id="7fw-Y3-C1H"/>
+                <constraint firstItem="SmX-K7-q9O" firstAttribute="top" secondItem="owg-Yh-yij" secondAttribute="bottom" constant="8" symbolic="YES" id="DIY-aG-EQ4"/>
+                <constraint firstItem="8NG-5c-WGh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="35" id="Ioj-TC-8FY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8NG-5c-WGh" secondAttribute="trailing" constant="35" id="Mhe-hY-zcN"/>
+                <constraint firstItem="owg-Yh-yij" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="44" id="ORv-98-xLE"/>
+                <constraint firstItem="SmX-K7-q9O" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="RDK-I9-Cs1"/>
+                <constraint firstItem="8NG-5c-WGh" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="T1v-zv-0nm"/>
+                <constraint firstItem="8NG-5c-WGh" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="wgM-NN-5EX"/>
+            </constraints>
+            <point key="canvasLocation" x="136.64122137404578" y="19.718309859154932"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="baseBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="buttonColor">
+            <color red="0.012000000104308128" green="0.2199999988079071" blue="0.36100000143051147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

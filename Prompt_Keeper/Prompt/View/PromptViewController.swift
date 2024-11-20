@@ -56,7 +56,8 @@ class PromptViewController: UIViewController {
         dropDown.separatorColor = .baseBlack
         DropDown.appearance().textColor = .baseBlack
         DropDown.appearance().textFont = .regular(size: 16) ?? .systemFont(ofSize: 16)
-        dropDown.selectionBackgroundColor = .clear
+        dropDown.selectionBackgroundColor = .background
+        dropDown.selectedTextColor = .baseBlack
         dropDown.addShadow()
         dropDown.width = 213
         dropDown.cellNib = UINib(nibName: "MyCell", bundle: nil)
