@@ -43,6 +43,11 @@
 		6B1B198C2CED294500E7328A /* PromptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B198B2CED294500E7328A /* PromptModel.swift */; };
 		6B1B198F2CED2AE800E7328A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B198E2CED2AE800E7328A /* CoreDataManager.swift */; };
 		6B1B19922CED2D7200E7328A /* PromptFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B19912CED2D7200E7328A /* PromptFormViewModel.swift */; };
+		6B1B19962CED433500E7328A /* PromptTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B1B19952CED433500E7328A /* PromptTableViewCell.xib */; };
+		6B1B19972CED433500E7328A /* PromptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B19942CED433500E7328A /* PromptTableViewCell.swift */; };
+		6B1B199A2CED483300E7328A /* PromptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B19992CED483300E7328A /* PromptViewModel.swift */; };
+		6B1B19A22CED624700E7328A /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B1B19A12CED624700E7328A /* MyCell.xib */; };
+		6B1B19A32CED624700E7328A /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B19A02CED624700E7328A /* MyCell.swift */; };
 		9475A90F26B8265D8C370AE7 /* Pods_Prompt_Keeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EEDF9471ECCB4ED458C2604 /* Pods_Prompt_Keeper.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +92,11 @@
 		6B1B198B2CED294500E7328A /* PromptModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptModel.swift; sourceTree = "<group>"; };
 		6B1B198E2CED2AE800E7328A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		6B1B19912CED2D7200E7328A /* PromptFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptFormViewModel.swift; sourceTree = "<group>"; };
+		6B1B19942CED433500E7328A /* PromptTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptTableViewCell.swift; sourceTree = "<group>"; };
+		6B1B19952CED433500E7328A /* PromptTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromptTableViewCell.xib; sourceTree = "<group>"; };
+		6B1B19992CED483300E7328A /* PromptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptViewModel.swift; sourceTree = "<group>"; };
+		6B1B19A02CED624700E7328A /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
+		6B1B19A12CED624700E7328A /* MyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
 		B77F8BF42585515DFAC2CE81 /* Pods-Prompt_Keeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prompt_Keeper.debug.xcconfig"; path = "Target Support Files/Pods-Prompt_Keeper/Pods-Prompt_Keeper.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -218,6 +228,8 @@
 		6B1B196B2CECB27200E7328A /* Prompt */ = {
 			isa = PBXGroup;
 			children = (
+				6B1B19982CED482200E7328A /* ViewModel */,
+				6B1B19932CED432100E7328A /* Cell */,
 				6B1B196C2CECB27800E7328A /* View */,
 			);
 			path = Prompt;
@@ -261,6 +273,7 @@
 		6B1B19802CED1DC500E7328A /* PromptForm */ = {
 			isa = PBXGroup;
 			children = (
+				6B1B199B2CED5FC000E7328A /* Cell */,
 				6B1B19902CED2D6100E7328A /* ViewModel */,
 				6B1B198A2CED293600E7328A /* Model */,
 				6B1B19812CED1DCD00E7328A /* View */,
@@ -299,6 +312,32 @@
 				6B1B19912CED2D7200E7328A /* PromptFormViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6B1B19932CED432100E7328A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6B1B19942CED433500E7328A /* PromptTableViewCell.swift */,
+				6B1B19952CED433500E7328A /* PromptTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		6B1B19982CED482200E7328A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6B1B19992CED483300E7328A /* PromptViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6B1B199B2CED5FC000E7328A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6B1B19A02CED624700E7328A /* MyCell.swift */,
+				6B1B19A12CED624700E7328A /* MyCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		E8961B66618F31F154DE026A /* Frameworks */ = {
@@ -374,12 +413,14 @@
 				6B1B194F2CECAAC500E7328A /* SFProText-Medium.ttf in Resources */,
 				6B1B197A2CECB2B600E7328A /* SettingsViewController.xib in Resources */,
 				6B1B19502CECAAC500E7328A /* SFProText-Bold.ttf in Resources */,
+				6B1B19A22CED624700E7328A /* MyCell.xib in Resources */,
 				6B1B19512CECAAC500E7328A /* SFProText-Regular.ttf in Resources */,
 				6B1B19472CECAA7500E7328A /* Root.storyboard in Resources */,
 				6B1B196F2CECB28300E7328A /* PromptViewController.xib in Resources */,
 				6B1B193F2CECA9A900E7328A /* Assets.xcassets in Resources */,
 				6B1B19412CECA9A900E7328A /* LaunchScreen.storyboard in Resources */,
 				6B1B19752CECB2A000E7328A /* FavoritesViewController.xib in Resources */,
+				6B1B19962CED433500E7328A /* PromptTableViewCell.xib in Resources */,
 				6B1B19842CED1DDE00E7328A /* PromptFormViewController.xib in Resources */,
 				6B1B19692CECB24400E7328A /* HomeViewController.xib in Resources */,
 			);
@@ -434,11 +475,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B1B199A2CED483300E7328A /* PromptViewModel.swift in Sources */,
 				6B1B193B2CECA9A900E7328A /* AppDelegate.swift in Sources */,
 				6B1B195B2CECAC2100E7328A /* ShadowView.swift in Sources */,
 				6B1B19892CED238F00E7328A /* BaseTextView.swift in Sources */,
 				6B1B195C2CECAC2100E7328A /* String.swift in Sources */,
 				6B1B195D2CECAC2100E7328A /* UIView.swift in Sources */,
+				6B1B19972CED433500E7328A /* PromptTableViewCell.swift in Sources */,
 				6B1B19642CECB21600E7328A /* TabBarViewController.swift in Sources */,
 				6B1B19922CED2D7200E7328A /* PromptFormViewModel.swift in Sources */,
 				6B1B19612CECAC3A00E7328A /* ViewController.swift in Sources */,
@@ -456,6 +499,7 @@
 				6B1B198C2CED294500E7328A /* PromptModel.swift in Sources */,
 				6B1B197D2CED16C100E7328A /* CategoryButton.swift in Sources */,
 				6B1B19702CECB28300E7328A /* PromptViewController.swift in Sources */,
+				6B1B19A32CED624700E7328A /* MyCell.swift in Sources */,
 				6B1B19762CECB2A000E7328A /* FavoritesViewController.swift in Sources */,
 				6B1B193D2CECA9A900E7328A /* SceneDelegate.swift in Sources */,
 			);

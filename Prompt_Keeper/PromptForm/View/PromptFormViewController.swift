@@ -20,7 +20,8 @@ class PromptFormViewController: UIViewController {
     private let dropDown = DropDown()
     private let viewModel = PromptFormViewModel.shared
     private var cancellables: Set<AnyCancellable> = []
-
+    var completion: (() -> ())?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -97,6 +98,7 @@ class PromptFormViewController: UIViewController {
             if let error = error {
                 self.showErrorAlert(message: error.localizedDescription)
             } else {
+                completion?()
                 self.navigationController?.popViewController(animated: true)
             }
         }

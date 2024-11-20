@@ -12,4 +12,5 @@ struct PromptModel {
     var name: String?
     var category: String?
     var info: String?
+    var isFavorite: Bool = false
 }

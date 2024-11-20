@@ -41,7 +41,7 @@ class CoreDataManager {
                 prompt.name = promptModel.name
                 prompt.category = promptModel.category
                 prompt.info = promptModel.info
-                
+                prompt.isFavorite = promptModel.isFavorite
                 try backgroundContext.save()
                 DispatchQueue.main.async {
                     completion(nil)
@@ -62,7 +62,7 @@ class CoreDataManager {
                 let results = try backgroundContext.fetch(fetchRequest)
                 var promptsModel: [PromptModel] = []
                 for result in results {
-                    let promptModel = PromptModel(id: result.id, name: result.name, category: result.category, info: result.info)
+                    let promptModel = PromptModel(id: result.id, name: result.name, category: result.category, info: result.info, isFavorite: result.isFavorite)
                     promptsModel.append(promptModel)
                 }
                 DispatchQueue.main.async {
@@ -75,4 +75,59 @@ class CoreDataManager {
             }
         }
     }
+    
+    func deletePrompt(by id: UUID, completion: @escaping (Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Prompt> = Prompt.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                if let promptToDelete = results.first {
+                    backgroundContext.delete(promptToDelete)
+                    try backgroundContext.save()
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        completion(NSError(domain: "CoreDataManager", code: 404, userInfo: [NSLocalizedDescriptionKey: "Prompt not found"]))
+                    }
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+            }
+        }
+    }
+
+    func updateIsFavorite(for id: UUID, to isFavorite: Bool, completion: @escaping (Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Prompt> = Prompt.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                if let promptToUpdate = results.first {
+                    promptToUpdate.isFavorite = isFavorite
+                    try backgroundContext.save()
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        completion(NSError(domain: "CoreDataManager", code: 404, userInfo: [NSLocalizedDescriptionKey: "Prompt not found"]))
+                    }
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+            }
+        }
+    }
+
 }
