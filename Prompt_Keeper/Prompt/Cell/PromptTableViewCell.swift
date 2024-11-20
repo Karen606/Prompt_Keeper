@@ -58,6 +58,7 @@ class PromptTableViewCell: UITableViewCell {
     
     @IBAction func clickedMore(_ sender: UIButton) {
         PromptViewModel.shared.selectedPrompt = promptModel
+        FavoritePromtViewModel.shared.selectedPrompt = promptModel
         delegate?.clickedMore(cell: self)
     }
 }

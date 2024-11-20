@@ -13,7 +13,7 @@ class MyCell: DropDownCell {
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak override var optionLabel: UILabel! {
         didSet {
-            
+
         }
     }
     override func awakeFromNib() {

@@ -29,6 +29,10 @@ class PromptViewController: UIViewController {
         viewModel.fetchData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.fetchData()
+    }
+    
     func setupUI() {
         searchTextField.setupLeftViewIcon(.search, size: CGSize(width: 40, height: 40))
         searchTextField.font = .regular(size: 18)
@@ -86,6 +90,8 @@ class PromptViewController: UIViewController {
                     guard let self = self else { return }
                     if let error = error {
                         self.showErrorAlert(message: error.localizedDescription)
+                    } else {
+                        viewModel.fetchData()
                     }
                 }
             default:
@@ -112,13 +118,13 @@ class PromptViewController: UIViewController {
     
     func openPromptFormVC() {
         let promtFormVC = PromptFormViewController(nibName: "PromptFormViewController", bundle: nil)
-        promtFormVC.completion = { [weak self] in
-            guard let self = self else { return }
-            self.viewModel.fetchData()
-        }
         self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(promtFormVC, animated: true)
         self.hidesBottomBarWhenPushed = false
+    }
+    
+    @IBAction func handleTapGesture(_ sender: UITapGestureRecognizer) {
+        handleTap()
     }
 
     @IBAction func clickedAdd(_ sender: UIButton) {
@@ -162,8 +168,9 @@ extension PromptViewController: UITextFieldDelegate {
 
 extension PromptViewController: PromtTableViewCellDelegate {
     func clickedMore(cell: PromptTableViewCell) {
-        let cellFrameInSuperview = promptyTableView.convert(cell.moreButton.frame, to: self.view)
-        dropDown.bottomOffset = CGPoint(x: cellFrameInSuperview.maxX - 213, y: cellFrameInSuperview.maxY + 2)
+        let buttonFrameInTableView = cell.moreButton.convert(cell.moreButton.bounds, to: promptyTableView)
+        let buttonFrameInSuperview = promptyTableView.convert(buttonFrameInTableView, to: self.view)
+        dropDown.bottomOffset = CGPoint(x: buttonFrameInSuperview.maxX - 213, y: buttonFrameInSuperview.maxY + 2)
         dropDown.show()
     }
 }

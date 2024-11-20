@@ -129,5 +129,34 @@ class CoreDataManager {
             }
         }
     }
+    
+    func fetchFavoritePrompts(completion: @escaping ([PromptModel], Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Prompt> = Prompt.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "isFavorite == %@", NSNumber(value: true)) // Filter only favorites
+            
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                let promptsModel = results.map { result in
+                    PromptModel(
+                        id: result.id,
+                        name: result.name,
+                        category: result.category,
+                        info: result.info,
+                        isFavorite: result.isFavorite
+                    )
+                }
+                DispatchQueue.main.async {
+                    completion(promptsModel, nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion([], error)
+                }
+            }
+        }
+    }
+
 
 }
